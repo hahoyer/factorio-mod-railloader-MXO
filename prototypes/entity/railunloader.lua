@@ -1,7 +1,7 @@
 local circuitconnectors = require "prototypes.entity.circuitconnectors"
 local pictures = require "prototypes.entity.pictures"
 
-data:extend{
+data:extend {
   -- buildable entity, immediately replaced by scripting
   {
     type = "pump",
@@ -9,10 +9,10 @@ data:extend{
     icon = "__base__/graphics/icons/rail.png",
     icon_size = 32,
     minable = { mining_time = 0.1, result = "railunloader" },
-    flags = {"player-creation", "placeable-neutral"},
+    flags = { "player-creation", "placeable-neutral" },
     max_health = 800,
-    collision_box = {{-1.8, -1.8}, {1.8, 1.8}},
-    selection_box = {{-1.8, -1.8}, {1.8, 1.8}},
+    collision_box = { { -1.8, -1.8 }, { 1.8, 1.8 } },
+    selection_box = { { -1.8, -1.8 }, { 1.8, 1.8 } },
     fluid_box = {
       pipe_connections = {},
     },
@@ -54,10 +54,10 @@ data:extend{
   {
     type = "inserter",
     name = "railunloader-inserter",
-    icon = "__railloader__/graphics/icons/railunloader.png",
+    icon = "__railloader-MXO__/graphics/icons/railunloader.png",
     icon_size = 32,
-    flags = {"hide-alt-info"},
-    collision_box = {{-1, -1}, {1, 1}},
+    flags = { "hide-alt-info" },
+    collision_box = { { -1, -1 }, { 1, 1 } },
     collision_mask = {},
     stack = true,
     max_health = 800,
@@ -71,8 +71,8 @@ data:extend{
     },
     extension_speed = 1,
     rotation_speed = 1,
-    pickup_position = {0.5, 2.3},
-    insert_position = {1.5, 1.5},
+    pickup_position = { 0.5, 2.3 },
+    insert_position = { 1.5, 1.5 },
     draw_held_item = false,
     platform_picture = { sheet = pictures.empty_sheet },
     hand_base_picture = pictures.empty_sheet,
@@ -88,14 +88,14 @@ data:extend{
   {
     type = "container",
     name = "railunloader-chest",
-    icon = "__railloader__/graphics/icons/railunloader.png",
+    icon = "__railloader-MXO__/graphics/icons/railunloader.png",
     icon_size = 32,
-    flags = {"player-creation"},
-    minable = {mining_time = 0.5, result = "railunloader"},
-    placeable_by = {item = "railunloader", count = 1},
+    flags = { "player-creation" },
+    minable = { mining_time = 0.5, result = "railunloader" },
+    placeable_by = { item = "railunloader", count = 1 },
     max_health = 800,
     corpse = "big-remnants",
-    open_sound = { filename = "__base__/sound/metallic-chest-open.ogg", volume=0.65 },
+    open_sound = { filename = "__base__/sound/metallic-chest-open.ogg", volume = 0.65 },
     close_sound = { filename = "__base__/sound/metallic-chest-close.ogg", volume = 0.7 },
     resistances =
     {
@@ -108,13 +108,13 @@ data:extend{
         percent = 60
       }
     },
-    collision_box = {{-2, -2}, {2, 2}},
-    selection_box = {{-2, -2}, {2, 2}},
-    collision_mask = {"item-layer", "object-layer", "water-tile"},
+    collision_box = { { -2, -2 }, { 2, 2 } },
+    selection_box = { { -2, -2 }, { 2, 2 } },
+    collision_mask = { "item-layer", "object-layer", "water-tile" },
     selection_priority = 255,
     fast_replaceable_group = "railloader",
     inventory_size = settings.startup["railloader-capacity"].value,
-    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     picture = pictures.empty_sheet,
     -- circuit_wire_connection_point = circuit_connector_definitions["chest"].points,
     -- circuit_connector_sprites = circuit_connector_definitions["chest"].sprites,
@@ -125,9 +125,9 @@ data:extend{
 local univ = util.table.deepcopy(data.raw["inserter"]["railunloader-inserter"])
 univ.name = "railunloader-universal-inserter"
 univ.filter_count = nil
-data:extend{univ}
+data:extend { univ }
 
 local interface_inserter = util.table.deepcopy(univ)
 interface_inserter.name = "railunloader-interface-inserter"
 interface_inserter.allow_custom_vectors = true
-data:extend{interface_inserter}
+data:extend { interface_inserter }

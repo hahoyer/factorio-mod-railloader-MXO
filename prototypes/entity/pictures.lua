@@ -4,7 +4,7 @@ local function flatten(ts)
   local out = {}
   for _, t in ipairs(ts) do
     for _, elem in ipairs(t) do
-      out[#out+1] = elem
+      out[#out + 1] = elem
     end
   end
   return out
@@ -16,13 +16,13 @@ local function triple_rail_pictures(direction, layers)
   local out = {}
   for _, layer in ipairs(layers) do
     local l = all_base_rail_pictures["straight_rail_" .. direction][layer]
-    for i=-1,1 do
+    for i = -1, 1 do
       local shift = { i * 2, 0 }
       if direction == "vertical" then
         shift = { 0, i * 2 }
       end
 
-      out[#out+1] = {
+      out[#out + 1] = {
         filename = l.filename,
         width = l.width,
         height = l.height,
@@ -42,8 +42,8 @@ local function triple_rail_pictures(direction, layers)
   return out
 end
 
-local all_layers = {"stone_path_background", "stone_path", "ties", "backplates", "metals"}
-local rail_only_layers = {"backplates", "metals"}
+local all_layers = { "stone_path_background", "stone_path", "ties", "backplates", "metals" }
+local rail_only_layers = { "backplates", "metals" }
 
 local wheels_layer = data.raw["cargo-wagon"]["cargo-wagon"].wheels
 local wagon_layer = data.raw["cargo-wagon"]["cargo-wagon"].pictures.layers[1]
@@ -56,13 +56,13 @@ local cargo_wagon_layers = {
       height = wheels_layer.height,
       y = wheels_layer.height * 8,
       frame_count = 1,
-      shift = {-2, -0.25},
+      shift = { -2, -0.25 },
       hr_version = {
         filename = wheels_layer.hr_version.filenames[3],
         width = wheels_layer.hr_version.width,
         height = wheels_layer.hr_version.height,
         frame_count = 1,
-        shift = {-2, -0.25},
+        shift = { -2, -0.25 },
         scale = 0.5,
       },
     },
@@ -73,13 +73,13 @@ local cargo_wagon_layers = {
       height = wheels_layer.height,
       y = wheels_layer.height * 8,
       frame_count = 1,
-      shift = {2, -0.25},
+      shift = { 2, -0.25 },
       hr_version = {
         filename = wheels_layer.hr_version.filenames[7],
         width = wheels_layer.hr_version.width,
         height = wheels_layer.hr_version.height,
         frame_count = 1,
-        shift = {2, -0.25},
+        shift = { 2, -0.25 },
         scale = 0.5,
       },
     },
@@ -107,13 +107,13 @@ local cargo_wagon_layers = {
       height = wheels_layer.height,
       y = 0,
       frame_count = 1,
-      shift = {0, 2.5},
+      shift = { 0, 2.5 },
       hr_version = {
         filename = wheels_layer.hr_version.filenames[1],
         width = wheels_layer.hr_version.width,
         height = wheels_layer.hr_version.height,
         frame_count = 1,
-        shift = {0, 2.5},
+        shift = { 0, 2.5 },
         scale = 0.5,
       },
     },
@@ -122,13 +122,13 @@ local cargo_wagon_layers = {
       width = wagon_layer.width,
       height = wagon_layer.height,
       frame_count = 1,
-      shift = {0, 0},
+      shift = { 0, 0 },
       hr_version = {
         filename = wagon_layer.hr_version.filenames[1],
         height = wagon_layer.hr_version.height,
         width = wagon_layer.hr_version.width,
         frame_count = 1,
-        shift = {0, 0},
+        shift = { 0, 0 },
         scale = 0.5,
       }
     }
@@ -136,7 +136,7 @@ local cargo_wagon_layers = {
 }
 
 M.railloader_structure_horizontal = {
-  filename = "__railloader__/graphics/railloader/structure-horizontal.png",
+  filename = "__railloader-MXO__/graphics/railloader/structure-horizontal.png",
   priority = "extra-high",
   width = 188,
   height = 210,
@@ -144,7 +144,7 @@ M.railloader_structure_horizontal = {
 }
 
 M.railloader_structure_vertical = {
-  filename = "__railloader__/graphics/railloader/structure-vertical.png",
+  filename = "__railloader-MXO__/graphics/railloader/structure-vertical.png",
   priority = "extra-high",
   width = 188,
   height = 210,
@@ -152,7 +152,7 @@ M.railloader_structure_vertical = {
 }
 
 local railloader_horizontal = {
-  layers = flatten{
+  layers = flatten {
     triple_rail_pictures("horizontal", all_layers),
     cargo_wagon_layers.horizontal,
     { M.railloader_structure_horizontal },
@@ -160,7 +160,7 @@ local railloader_horizontal = {
 }
 
 local railloader_vertical = {
-  layers = flatten{
+  layers = flatten {
     triple_rail_pictures("vertical", all_layers),
     cargo_wagon_layers.vertical,
     { M.railloader_structure_vertical },
@@ -175,10 +175,10 @@ M.railloader_proxy_animations = {
 }
 
 M.railunloader_horizontal = {
-  layers = flatten{
+  layers = flatten {
     {
       {
-        filename = "__railloader__/graphics/railunloader/structure-horizontal.png",
+        filename = "__railloader-MXO__/graphics/railunloader/structure-horizontal.png",
         width = 384,
         height = 256,
         frame_count = 1,
@@ -190,10 +190,10 @@ M.railunloader_horizontal = {
 }
 
 M.railunloader_vertical = {
-  layers = flatten{
+  layers = flatten {
     {
       {
-        filename = "__railloader__/graphics/railunloader/structure-vertical.png",
+        filename = "__railloader-MXO__/graphics/railunloader/structure-vertical.png",
         width = 256,
         height = 384,
         frame_count = 1,
@@ -205,14 +205,14 @@ M.railunloader_vertical = {
 }
 
 local railunloader_proxy_horizontal = {
-  layers = flatten{
+  layers = flatten {
     M.railunloader_horizontal.layers,
     cargo_wagon_layers.horizontal,
   }
 }
 
 local railunloader_proxy_vertical = {
-  layers = flatten{
+  layers = flatten {
     M.railunloader_vertical.layers,
     cargo_wagon_layers.vertical,
   }

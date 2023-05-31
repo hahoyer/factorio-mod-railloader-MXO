@@ -1,15 +1,9 @@
 {
-	"name": "railloader",
+	"name": "railloader-MXO",
 	"version": "1.1.6",
 	"factorio_version": "1.1",
-	"title": "Bulk Rail Loader",
-	"author": "Therax",
-	"homepage": "https://forums.factorio.com/viewtopic.php?f=93&t=56850",
-	"description": "Bulk train loader/unloader with buffer.",
-	"dependencies": [],
-	"package": {
-		"ignore":[
-			"resources/*"
-		]
-	}
+	"title": "Bulk Rail Loader for multipe ores",
+	"author": "ixu",
+	"description": "Bulk train loader/unloader with buffer. Suitable of handling multiple ores. Originated from railloader by therax",
+	"dependencies": ["! railloader"]
 }
