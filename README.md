@@ -90,3 +90,8 @@ mod setting to allow any item.
 ## Acknowledgements
 
 * Arch666Angel for the loader graphics.
+
+## Special feature of this variant:
+The loader uses invisible inserter to load the train. When the loading is finished, the inserter may not be able to unload all their items. They will then remain in the inserter until the next turn. If wagons of the next train now have filtered inventory that does not match the "leftovers" in the inserters, then the affected inserters cannot participate in loading. Loading will be slower, asymmetric or even completely prevented.
+This mod reduces the problem almost completely by rotating the inserters 180° after leaving the train. This unloads the inserters into the loader if there is room. When the next train arrives, they are then rotated back again.
+(That there is space in the loader immediately after loading is quite likely. However, there are also rare situations where the loader inventory is already full again. Then this solution fails unfortunately).

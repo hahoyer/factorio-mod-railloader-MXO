@@ -3,6 +3,8 @@ Version: 1.1.7
 Date: 2023-05-31
   Bugfixes:
     - Fixing invalid file name
+  Changes:
+    - Add special treatment of internal inserters to support wagon-filter-mode of Cybersync mod
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.6
 Date: 2022-07-20
