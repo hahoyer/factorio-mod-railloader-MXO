@@ -134,7 +134,7 @@ end
 local function manage_internal_inserters(event)
   if event.train.state == defines.train_state.on_the_path then
     manage_internal_inserters_for_train(event.train, ensure_inserter_put_back_items_from_hand)
-  elseif event.train.state == defines.train_state.arrive_station then
+  elseif event.train.state == defines.train_state.arrive_station or event.train.state == defines.train_state.wait_station then
     manage_internal_inserters_for_train(event.train, ensure_inserter_load_items)
   end
 end
