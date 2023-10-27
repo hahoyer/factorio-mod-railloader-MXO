@@ -339,6 +339,7 @@ local function on_blueprint(event)
   local entities = bp.get_blueprint_entities()
   if not entities then return end
 
+  local need_blueprint_update
   for _, bp_entity in pairs(entities) do
     if bp_entity.name == "railloader-chest" or bp_entity.name == "railunloader-chest" then
       local chest_entity = player.surface.find_entities_filtered{
@@ -360,11 +361,11 @@ local function on_blueprint(event)
       bp_entity.direction = rail.direction
       -- preserve chest limit
       bp_entity.tags = { bar = chest_entity.get_inventory(defines.inventory.chest).get_bar() }
+      need_blueprint_update = true
     end
     ::continue::
   end
-
-  bp.set_blueprint_entities(entities)
+  if need_blueprint_update then bp.set_blueprint_entities(entities) end
 end
 
 local function on_setting_changed(event)
