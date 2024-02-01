@@ -1,0 +1,50 @@
+{
+    "Lua.diagnostics.globals": [
+        "defines",
+        "game",
+        "serpent",
+        "log",
+        "script",
+        "settings",
+        "global",
+        "currentLinks",
+        "data",
+        "remote",
+        "__DebugAdapter",
+        "__Profiler"
+    ],
+    "Lua.diagnostics.disable": [
+        "redefined-local",
+        "lowercase-global"
+    ],
+    "Lua.completion.autoRequire": false,
+    "factorio.versions": [
+        {
+            "name": "factorio",
+            "factorioPath": "d:\\data\\Program Files\\Steam\\steamapps\\common\\Factorio\\bin\\x64\\factorio.exe",
+            "active": true
+        }
+    ],
+    "Lua.workspace.library": [
+        "d:\\data\\Program Files\\Steam\\steamapps\\common\\Factorio\\data",
+        "c:/Users/hh/AppData/Roaming/Code/User/workspaceStorage/cf90b850a3e1f7a9dda34b44b4ab4015/justarandomgeek.factoriomod-debug/sumneko-3rd/factorio/library",
+        "c:/Users/hh/AppData/Roaming/Code - Insiders/User/workspaceStorage/cf90b850a3e1f7a9dda34b44b4ab4015/justarandomgeek.factoriomod-debug/sumneko-3rd/factorio/library"
+    ],
+    "Lua.workspace.userThirdParty": [
+        "c:\\Users\\hh\\AppData\\Roaming\\Code\\User\\workspaceStorage\\cf90b850a3e1f7a9dda34b44b4ab4015\\justarandomgeek.factoriomod-debug\\sumneko-3rd",
+        "c:\\Users\\hh\\AppData\\Roaming\\Code - Insiders\\User\\workspaceStorage\\cf90b850a3e1f7a9dda34b44b4ab4015\\justarandomgeek.factoriomod-debug\\sumneko-3rd"
+    ],
+    "Lua.runtime.builtin": {
+        "io": "disable",
+        "os": "disable",
+        "math": "disable",
+        "debug": "disable",
+        "coroutine": "disable",
+        "package": "disable"
+    },
+    "Lua.runtime.version": "Lua 5.2",
+    "Lua.runtime.special": {
+        "__object_name": "type"
+    },
+    "Lua.runtime.plugin": "c:/Users/hh/AppData/Roaming/Code - Insiders/User/workspaceStorage/cf90b850a3e1f7a9dda34b44b4ab4015/justarandomgeek.factoriomod-debug/sumneko-3rd/factorio/plugin.lua"
+}
